@@ -17,10 +17,10 @@ var getRect = function getRect(node) {
       x = _getBoundingClientRec.x,
       y = _getBoundingClientRec.y,
       top = _getBoundingClientRec.top,
-      left = _getBoundingClientRec.left;
+      left = _getBoundingClientRec.left,
+      width = _getBoundingClientRec.width,
+      height = _getBoundingClientRec.height;
 
-  var width = node.offsetWidth;
-  var height = node.offsetHeight;
   return {
     x: x,
     y: y,
