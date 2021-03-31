@@ -34,7 +34,7 @@ function getResizeObserver() {
           if (typeof onLayout === 'function') {
             // We still need to measure the view because browsers don't yet provide
             // border-box dimensions in the entry
-            _UIManager.default.measure(node, function (x, y, width, height, left, top) {
+            _UIManager.default.measure(node, function (x, y, width, height, left, top, rect) {
               var event = {
                 // $FlowFixMe
                 nativeEvent: {
@@ -44,7 +44,8 @@ function getResizeObserver() {
                     width: width,
                     height: height,
                     left: left,
-                    top: top
+                    top: top,
+                    rect: rect
                   }
                 },
                 timeStamp: Date.now()

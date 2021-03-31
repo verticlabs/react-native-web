@@ -35,7 +35,8 @@ var getRect = function getRect(node) {
     width: width,
     height: height,
     top: top,
-    left: left
+    left: left,
+    rect: _getBoundingClientRec
   };
 };
 
@@ -50,11 +51,12 @@ var _measureLayout = function measureLayout(node, relativeToNativeNode, callback
           height = _getRect.height,
           left = _getRect.left,
           top = _getRect.top,
-          width = _getRect.width;
+          width = _getRect.width,
+          rect = _getRect.rect;
 
       var x = left - relativeRect.left;
       var y = top - relativeRect.top;
-      callback(x, y, width, height, left, top);
+      callback(x, y, width, height, left, top, rect);
     }, 0);
   }
 };
